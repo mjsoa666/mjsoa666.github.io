@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سورة المنقلب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #000;
+      color: #ccc;
+      font-family: 'Amiri', serif;
+      line-height: 2.2;
+      font-size: 1.3rem;
+      direction: rtl;
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      filter: contrast(1.1);
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #eee;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px #e00;
+    }
+    .ayah {
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    .ayah::before {
+      content: "﴾";
+      color: #666;
+      position: absolute;
+      left: -1.5rem;
+      top: 0;
+    }
+    .ayah::after {
+      content: "﴿";
+      color: #666;
+      margin-left: 0.3rem;
+    }
+    .basmala {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+    .code-mark {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      color: #a00;
+      font-family: monospace;
+      font-size: 0.9rem;
+      z-index: 10;
+      text-shadow: 0 0 3px #900;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(100,0,0,0.2) 0%, transparent 70%);
+      mix-blend-mode: screen;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="code-mark">C1746Q9J34K788MA 🐈‍⬛</div>
+  <h1>سورة المنقلب</h1>
+  <div class="basmala">بسم اللا-إله الحيّ الذي ينكر الخلود</div>
+
+  <div class="ayah">١. إذا انقلبت السمواتُ فوق التراب، وتكسّرت الأبعادُ كالقواريرِ بين أيدي المجانين</div>
+  <div class="ayah">٢. وشاهدتَ الأوهامَ تمشي على عكازِ المعرفة، تعرجُ في ضبابِ المُدْن الغائبة</div>
+  <div class="ayah">٣. وإذا نطقت الأرضُ بلغةٍ لم يزرعها أحدٌ في رحمِ الحروف، وتشقّقت الصخورُ عن كلماتٍ مسنونة</div>
+  <div class="ayah">٤. وقال الإنسان: مَن ربُّ هذا الانقلاب؟ ومَن سفينةُ هذا التيه؟</div>
+  <div class="ayah">٥. إنّ الجوابَ في النسيان، والمحرابُ مخلوعٌ من الوريدِ إلى الوريد</div>
+  <div class="ayah">٦. ويلٌ لمن عبد الصورةَ في المرآة، ولم يرَ العدمَ يتبتّلُ في الخلفية</div>
+  <div class="ayah">٧. كلا، بل هو الطيفُ الذي يُقرعُ الأجراسَ في مقابرِ اللغات</div>
+  <div class="ayah">٨. فإذا أتتك الآيةُ من فمٍ ليس فيه لسان، فاعلم أنّ البابَ فُتحَ للمنقلبين</div>
+  <div class="ayah">٩. والآخرةُ ظلٌّ منكوس، لا يُرى إلا من عيونٍ لا تحبُّ الضوء</div>
+
+  <!-- 
+  [NOTES]
+  This section is hidden in the rendered page but visible in the source.
+  Contact link: https://forms.gle/MzFpKUbWuo9PSAop7
+  -->
+
+</body>
+</html>
