@@ -1,0 +1,300 @@
+<meta charset="UTF-8"/>
+<pre><code style="color: #000000"><span style="color: #0000BB">&lt;?php
+
+$PYNK5 </span><span style="color: #007700">= </span><span style="color: #DD0000">'#ff1969'</span><span style="color: #007700">;
+
+function </span><span style="color: #0000BB">getLoopDayName</span><span style="color: #007700">(</span><span style="color: #0000BB">$index</span><span style="color: #007700">, </span><span style="color: #0000BB">$reverse</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$_map </span><span style="color: #007700">= array(
+        </span><span style="color: #DD0000">'JAN'</span><span style="color: #007700">, </span><span style="color: #DD0000">'FEB'</span><span style="color: #007700">, </span><span style="color: #DD0000">'MAR'</span><span style="color: #007700">,
+        </span><span style="color: #DD0000">'APR'</span><span style="color: #007700">, </span><span style="color: #DD0000">'MAY'</span><span style="color: #007700">, </span><span style="color: #DD0000">'JUN'</span><span style="color: #007700">,
+        </span><span style="color: #DD0000">'JUL'</span><span style="color: #007700">, </span><span style="color: #DD0000">'AUG'</span><span style="color: #007700">, </span><span style="color: #DD0000">'SEP'</span><span style="color: #007700">,
+        </span><span style="color: #DD0000">'OCT'</span><span style="color: #007700">, </span><span style="color: #DD0000">'NOV'</span><span style="color: #007700">, </span><span style="color: #DD0000">'DEC'</span><span style="color: #007700">,
+        </span><span style="color: #DD0000">'YEZ'
+    </span><span style="color: #007700">);
+
+    if (</span><span style="color: #0000BB">$reverse</span><span style="color: #007700">) {
+        return </span><span style="color: #0000BB">$_map</span><span style="color: #007700">[</span><span style="color: #0000BB">13 </span><span style="color: #007700">- </span><span style="color: #0000BB">$index</span><span style="color: #007700">];
+    }
+    return </span><span style="color: #0000BB">$_map</span><span style="color: #007700">[</span><span style="color: #0000BB">$index </span><span style="color: #007700">- </span><span style="color: #0000BB">1</span><span style="color: #007700">];
+}
+
+function </span><span style="color: #0000BB">getLoopDayIndex</span><span style="color: #007700">(</span><span style="color: #0000BB">$position</span><span style="color: #007700">) {
+    return </span><span style="color: #0000BB">$position</span><span style="color: #007700">;    
+}
+
+function </span><span style="color: #0000BB">getLoopYear</span><span style="color: #007700">(</span><span style="color: #0000BB">$_toneData</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$wave </span><span style="color: #007700">= </span><span style="color: #0000BB">$_toneData</span><span style="color: #007700">[</span><span style="color: #DD0000">'wave'</span><span style="color: #007700">];
+    </span><span style="color: #0000BB">$tone </span><span style="color: #007700">= </span><span style="color: #0000BB">$_toneData</span><span style="color: #007700">[</span><span style="color: #DD0000">'tone'</span><span style="color: #007700">];
+
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">0</span><span style="color: #007700">) {
+        return </span><span style="color: #0000BB">0</span><span style="color: #007700">;
+    }
+
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">23</span><span style="color: #007700">) {
+        return </span><span style="color: #0000BB">$wave</span><span style="color: #007700">;
+    }
+
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">23</span><span style="color: #007700">) {
+        if (</span><span style="color: #0000BB">$tone </span><span style="color: #007700">== </span><span style="color: #0000BB">1</span><span style="color: #007700">) return </span><span style="color: #0000BB">23</span><span style="color: #007700">;
+        if (</span><span style="color: #0000BB">$tone </span><span style="color: #007700">== </span><span style="color: #0000BB">2</span><span style="color: #007700">) return </span><span style="color: #0000BB">24</span><span style="color: #007700">;
+        if (</span><span style="color: #0000BB">$tone </span><span style="color: #007700">&gt;= </span><span style="color: #0000BB">3 </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$tone </span><span style="color: #007700">&lt;= </span><span style="color: #0000BB">6</span><span style="color: #007700">) return </span><span style="color: #0000BB">25</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$bump </span><span style="color: #007700">= </span><span style="color: #0000BB">$tone </span><span style="color: #007700">- </span><span style="color: #0000BB">4</span><span style="color: #007700">;
+        return </span><span style="color: #0000BB">$wave </span><span style="color: #007700">+ </span><span style="color: #0000BB">$bump</span><span style="color: #007700">;
+    }
+
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">24</span><span style="color: #007700">) {
+        </span><span style="color: #0000BB">$the_hour </span><span style="color: #007700">= </span><span style="color: #0000BB">9</span><span style="color: #007700">;
+        return </span><span style="color: #0000BB">$wave </span><span style="color: #007700">+ </span><span style="color: #0000BB">$the_hour</span><span style="color: #007700">;
+    }
+
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">25</span><span style="color: #007700">) return </span><span style="color: #0000BB">42</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">26</span><span style="color: #007700">) return </span><span style="color: #0000BB">53</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">27</span><span style="color: #007700">) return </span><span style="color: #0000BB">86</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">28</span><span style="color: #007700">) return </span><span style="color: #0000BB">99</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">29</span><span style="color: #007700">) return </span><span style="color: #0000BB">88</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">30</span><span style="color: #007700">) return </span><span style="color: #0000BB">87</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">31</span><span style="color: #007700">) return </span><span style="color: #0000BB">78</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">32</span><span style="color: #007700">) return </span><span style="color: #0000BB">77</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">33</span><span style="color: #007700">) return </span><span style="color: #0000BB">66</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$wave </span><span style="color: #007700">== </span><span style="color: #0000BB">34</span><span style="color: #007700">) return </span><span style="color: #0000BB">44</span><span style="color: #007700">;
+    return </span><span style="color: #0000BB">00</span><span style="color: #007700">;
+}
+
+function </span><span style="color: #0000BB">getLoopDayPosition</span><span style="color: #007700">(</span><span style="color: #0000BB">$tone</span><span style="color: #007700">) {
+    return </span><span style="color: #0000BB">$tone</span><span style="color: #007700">;
+}
+
+function </span><span style="color: #0000BB">getWhen</span><span style="color: #007700">(</span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">, </span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$is_toda </span><span style="color: #007700">= </span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">) === </span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$is_past </span><span style="color: #007700">= !</span><span style="color: #0000BB">$is_toda </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$loopDate </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">; 
+    </span><span style="color: #0000BB">$is_future </span><span style="color: #007700">= !</span><span style="color: #0000BB">$is_past </span><span style="color: #007700">&amp;&amp; !</span><span style="color: #0000BB">$is_toda</span><span style="color: #007700">;
+
+    if (</span><span style="color: #0000BB">$is_past</span><span style="color: #007700">) return </span><span style="color: #DD0000">'404'</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$is_toda</span><span style="color: #007700">) return </span><span style="color: #DD0000">'1212'</span><span style="color: #007700">;        
+    if (</span><span style="color: #0000BB">$is_future</span><span style="color: #007700">) return </span><span style="color: #DD0000">'333'</span><span style="color: #007700">;
+}
+
+function </span><span style="color: #0000BB">getToneData</span><span style="color: #007700">(</span><span style="color: #0000BB">$gregorianDate</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$baseDate </span><span style="color: #007700">= </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">, </span><span style="color: #DD0000">'12-12-2023'</span><span style="color: #007700">); 
+    </span><span style="color: #0000BB">$inputDate </span><span style="color: #007700">= </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">, </span><span style="color: #0000BB">$gregorianDate</span><span style="color: #007700">);
+
+    </span><span style="color: #0000BB">$dayOutOfTime </span><span style="color: #007700">= </span><span style="color: #DD0000">"02-29-2024"</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$inputDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">) == </span><span style="color: #0000BB">$dayOutOfTime</span><span style="color: #007700">) {
+        return </span><span style="color: #0000BB">null</span><span style="color: #007700">;
+    }
+
+    </span><span style="color: #0000BB">$lionsGate </span><span style="color: #007700">= </span><span style="color: #DD0000">"10-08-2024"</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$inputDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">) == </span><span style="color: #0000BB">$lionsGate</span><span style="color: #007700">) {
+        return </span><span style="color: #0000BB">null</span><span style="color: #007700">;
+    }
+
+    </span><span style="color: #0000BB">$toneNumber </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">;
+    </span><span style="color: #0000BB">$interval </span><span style="color: #007700">= </span><span style="color: #0000BB">$inputDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">diff</span><span style="color: #007700">(</span><span style="color: #0000BB">$baseDate</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$daysDifference </span><span style="color: #007700">= </span><span style="color: #0000BB">$interval</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">days</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$inputDate </span><span style="color: #007700">&gt; </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">, </span><span style="color: #0000BB">$dayOutOfTime</span><span style="color: #007700">)) {
+        </span><span style="color: #0000BB">$daysDifference </span><span style="color: #007700">-= </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+    }
+    </span><span style="color: #0000BB">$toneNumber </span><span style="color: #007700">= (</span><span style="color: #0000BB">$daysDifference </span><span style="color: #007700">+ </span><span style="color: #0000BB">1</span><span style="color: #007700">) % </span><span style="color: #0000BB">13</span><span style="color: #007700">; 
+    if (</span><span style="color: #0000BB">$toneNumber </span><span style="color: #007700">== </span><span style="color: #0000BB">0</span><span style="color: #007700">) {
+        </span><span style="color: #0000BB">$toneNumber </span><span style="color: #007700">= </span><span style="color: #0000BB">13</span><span style="color: #007700">;
+    }
+
+    </span><span style="color: #0000BB">$firstDayOfTone </span><span style="color: #007700">= </span><span style="color: #0000BB">$daysDifference </span><span style="color: #007700">% </span><span style="color: #0000BB">13 </span><span style="color: #007700">=== </span><span style="color: #0000BB">0</span><span style="color: #007700">;
+    </span><span style="color: #0000BB">$wave </span><span style="color: #007700">= </span><span style="color: #0000BB">$firstDayOfTone </span><span style="color: #007700">? (</span><span style="color: #0000BB">$daysDifference </span><span style="color: #007700">/ </span><span style="color: #0000BB">13</span><span style="color: #007700">) + </span><span style="color: #0000BB">1 </span><span style="color: #007700">: </span><span style="color: #0000BB">ceil</span><span style="color: #007700">(</span><span style="color: #0000BB">$daysDifference </span><span style="color: #007700">/ </span><span style="color: #0000BB">13</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$wave </span><span style="color: #007700">= </span><span style="color: #0000BB">$wave </span><span style="color: #007700">- </span><span style="color: #0000BB">1</span><span style="color: #007700">;  
+
+    return array(
+        </span><span style="color: #DD0000">'tone' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$toneNumber</span><span style="color: #007700">, 
+        </span><span style="color: #DD0000">'wave' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$wave
+    </span><span style="color: #007700">); 
+}
+
+function </span><span style="color: #0000BB">generateKalada</span><span style="color: #007700">(</span><span style="color: #0000BB">$startDate</span><span style="color: #007700">, </span><span style="color: #0000BB">$numDays</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$_kalada </span><span style="color: #007700">= array();
+    </span><span style="color: #0000BB">$currentDate </span><span style="color: #007700">= new </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">();
+    </span><span style="color: #0000BB">$startHere </span><span style="color: #007700">= </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">, </span><span style="color: #0000BB">$startDate</span><span style="color: #007700">);
+
+    </span><span style="color: #0000BB">$kount </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">;
+
+    for (</span><span style="color: #0000BB">$i </span><span style="color: #007700">= </span><span style="color: #0000BB">0</span><span style="color: #007700">; </span><span style="color: #0000BB">$i </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">$numDays</span><span style="color: #007700">; </span><span style="color: #0000BB">$i</span><span style="color: #007700">++) {
+        </span><span style="color: #0000BB">$loopDate </span><span style="color: #007700">= clone </span><span style="color: #0000BB">$startHere</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">"+</span><span style="color: #0000BB">$i</span><span style="color: #DD0000"> day"</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$toneData </span><span style="color: #007700">= </span><span style="color: #0000BB">getToneData</span><span style="color: #007700">(</span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">));
+    
+        if (</span><span style="color: #0000BB">$toneData </span><span style="color: #007700">=== </span><span style="color: #0000BB">null</span><span style="color: #007700">) {
+            </span><span style="color: #0000BB">$kount </span><span style="color: #007700">++;
+            </span><span style="color: #0000BB">$_kalada</span><span style="color: #007700">[] = array(
+                </span><span style="color: #DD0000">'kount' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$kount</span><span style="color: #007700">,
+                </span><span style="color: #DD0000">'datetime' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">, 
+                </span><span style="color: #DD0000">'date' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">),
+                </span><span style="color: #DD0000">'when' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">getWhen</span><span style="color: #007700">(</span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">, </span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">),
+                </span><span style="color: #DD0000">'tone' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">null</span><span style="color: #007700">,                
+                </span><span style="color: #DD0000">'position' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">null</span><span style="color: #007700">,
+                </span><span style="color: #DD0000">'LY' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">null</span><span style="color: #007700">,
+                </span><span style="color: #DD0000">'dayname' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">null</span><span style="color: #007700">,
+            );
+            continue;
+        }
+
+        </span><span style="color: #0000BB">$tone </span><span style="color: #007700">= </span><span style="color: #0000BB">$toneData</span><span style="color: #007700">[</span><span style="color: #DD0000">'tone'</span><span style="color: #007700">];
+        </span><span style="color: #0000BB">$position </span><span style="color: #007700">= </span><span style="color: #0000BB">getLoopDayPosition</span><span style="color: #007700">(</span><span style="color: #0000BB">$tone</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$LY </span><span style="color: #007700">= </span><span style="color: #0000BB">getLoopYear</span><span style="color: #007700">(</span><span style="color: #0000BB">$toneData</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$loopDayIndex </span><span style="color: #007700">= </span><span style="color: #0000BB">getLoopDayIndex</span><span style="color: #007700">(</span><span style="color: #0000BB">$position</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$reverse </span><span style="color: #007700">= (</span><span style="color: #0000BB">$LY </span><span style="color: #007700">== </span><span style="color: #0000BB">14</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$loopDayName </span><span style="color: #007700">= </span><span style="color: #0000BB">getLoopDayName</span><span style="color: #007700">(</span><span style="color: #0000BB">$loopDayIndex</span><span style="color: #007700">, </span><span style="color: #0000BB">$reverse</span><span style="color: #007700">);
+
+        if (</span><span style="color: #0000BB">$LY </span><span style="color: #007700">&gt; </span><span style="color: #0000BB">0</span><span style="color: #007700">) {
+            </span><span style="color: #0000BB">$kount </span><span style="color: #007700">++;
+        }
+
+        </span><span style="color: #0000BB">$_kalada</span><span style="color: #007700">[] = array(
+            </span><span style="color: #DD0000">'kount' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$kount</span><span style="color: #007700">,
+            </span><span style="color: #DD0000">'datetime' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">,             
+            </span><span style="color: #DD0000">'date' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">),
+            </span><span style="color: #DD0000">'when' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">getWhen</span><span style="color: #007700">(</span><span style="color: #0000BB">$loopDate</span><span style="color: #007700">, </span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">),
+            </span><span style="color: #DD0000">'tone' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$tone</span><span style="color: #007700">,            
+            </span><span style="color: #DD0000">'position' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$position</span><span style="color: #007700">,
+            </span><span style="color: #DD0000">'LY' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$LY</span><span style="color: #007700">,
+            </span><span style="color: #DD0000">'dayname' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$loopDayName</span><span style="color: #007700">,
+            </span><span style="color: #DD0000">'wave' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$toneData</span><span style="color: #007700">[</span><span style="color: #DD0000">'wave'</span><span style="color: #007700">],
+        );
+    }
+
+    return </span><span style="color: #0000BB">$_kalada</span><span style="color: #007700">;
+}
+
+function </span><span style="color: #0000BB">formatWhenKaji</span><span style="color: #007700">(</span><span style="color: #0000BB">$zsynk</span><span style="color: #007700">) {
+    if (</span><span style="color: #0000BB">$zsynk </span><span style="color: #007700">== </span><span style="color: #DD0000">'404'</span><span style="color: #007700">) return </span><span style="color: #DD0000">'🏆'</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$zsynk </span><span style="color: #007700">== </span><span style="color: #DD0000">'1212'</span><span style="color: #007700">) return </span><span style="color: #DD0000">"&lt;a class='kaji' href='jump'&gt;🐸&lt;/a&gt;"</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$zsynk </span><span style="color: #007700">== </span><span style="color: #DD0000">'333'</span><span style="color: #007700">) return </span><span style="color: #DD0000">'🐇'</span><span style="color: #007700">;
+}        
+
+function </span><span style="color: #0000BB">formatMMDay</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$inputDate </span><span style="color: #007700">= </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">, </span><span style="color: #0000BB">$date</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$month </span><span style="color: #007700">= </span><span style="color: #0000BB">$inputDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'m'</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$day </span><span style="color: #007700">= </span><span style="color: #0000BB">$inputDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'d'</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$year </span><span style="color: #007700">= </span><span style="color: #0000BB">$inputDate</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y'</span><span style="color: #007700">);
+    
+    </span><span style="color: #0000BB">$mm </span><span style="color: #007700">= </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$month </span><span style="color: #007700">== </span><span style="color: #DD0000">'05'</span><span style="color: #007700">) {
+        </span><span style="color: #0000BB">$mm </span><span style="color: #007700">= </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$mmday </span><span style="color: #007700">= </span><span style="color: #0000BB">$day</span><span style="color: #007700">;
+    }
+    elseif (</span><span style="color: #0000BB">$month </span><span style="color: #007700">== </span><span style="color: #DD0000">'06'</span><span style="color: #007700">) {
+        </span><span style="color: #0000BB">$month </span><span style="color: #007700">= </span><span style="color: #DD0000">'05'</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$mmday </span><span style="color: #007700">= </span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">'%02d'</span><span style="color: #007700">, </span><span style="color: #0000BB">$day </span><span style="color: #007700">+ </span><span style="color: #0000BB">31</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$mm </span><span style="color: #007700">= </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;
+    } elseif (</span><span style="color: #0000BB">$month </span><span style="color: #007700">&gt; </span><span style="color: #DD0000">'06' </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$year </span><span style="color: #007700">== </span><span style="color: #0000BB">2024</span><span style="color: #007700">) {
+        </span><span style="color: #0000BB">$mmday </span><span style="color: #007700">= </span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">'%02d'</span><span style="color: #007700">, </span><span style="color: #0000BB">$day </span><span style="color: #007700">+ </span><span style="color: #0000BB">31 </span><span style="color: #007700">* (</span><span style="color: #0000BB">$month </span><span style="color: #007700">- </span><span style="color: #0000BB">6 </span><span style="color: #007700">+ </span><span style="color: #0000BB">1</span><span style="color: #007700">));
+        </span><span style="color: #0000BB">$mm </span><span style="color: #007700">= </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;
+    }
+
+    if (</span><span style="color: #0000BB">$mm </span><span style="color: #007700">=== </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">) return </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$mmday </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">25</span><span style="color: #007700">) return </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+    if (</span><span style="color: #0000BB">$mmday </span><span style="color: #007700">&gt; </span><span style="color: #0000BB">99</span><span style="color: #007700">) return </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+
+    if (</span><span style="color: #0000BB">$mmday </span><span style="color: #007700">&lt; </span><span style="color: #0000BB">86</span><span style="color: #007700">) {
+        return </span><span style="color: #DD0000">"mm+</span><span style="color: #0000BB">$mmday</span><span style="color: #DD0000">"</span><span style="color: #007700">;
+    }
+
+    if (</span><span style="color: #0000BB">$mmday </span><span style="color: #007700">&gt;= </span><span style="color: #0000BB">86</span><span style="color: #007700">) {
+        </span><span style="color: #0000BB">$mmday </span><span style="color: #007700">= </span><span style="color: #0000BB">99 </span><span style="color: #007700">- (</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">$mmday</span><span style="color: #007700">) - </span><span style="color: #0000BB">86</span><span style="color: #007700">);
+        return </span><span style="color: #DD0000">"mm+</span><span style="color: #0000BB">$mmday</span><span style="color: #DD0000">"</span><span style="color: #007700">;
+    }
+}
+
+function </span><span style="color: #0000BB">printKalada</span><span style="color: #007700">(</span><span style="color: #0000BB">$_kalada</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">= </span><span style="color: #DD0000">"&lt;table style='font-size: 1.3em' border='1'&gt;"</span><span style="color: #007700">;
+    </span><span style="color: #0000BB">$_kalada </span><span style="color: #007700">= </span><span style="color: #0000BB">array_reverse</span><span style="color: #007700">(</span><span style="color: #0000BB">$_kalada</span><span style="color: #007700">);
+
+    foreach (</span><span style="color: #0000BB">$_kalada </span><span style="color: #007700">as </span><span style="color: #0000BB">$_da</span><span style="color: #007700">) {
+        if (!isset(</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'tone'</span><span style="color: #007700">])) {
+            </span><span style="color: #0000BB">$loopCode </span><span style="color: #007700">= </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+            </span><span style="color: #0000BB">$position </span><span style="color: #007700">= </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+        } else {
+            </span><span style="color: #0000BB">$year </span><span style="color: #007700">= </span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">'%02d'</span><span style="color: #007700">, </span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'LY'</span><span style="color: #007700">]);
+            </span><span style="color: #0000BB">$loopCode </span><span style="color: #007700">= </span><span style="color: #DD0000">"LY" </span><span style="color: #007700">. </span><span style="color: #0000BB">$year </span><span style="color: #007700">. </span><span style="color: #DD0000">':' </span><span style="color: #007700">. </span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'dayname'</span><span style="color: #007700">];
+            </span><span style="color: #0000BB">$position </span><span style="color: #007700">= </span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">'%02d'</span><span style="color: #007700">, </span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'position'</span><span style="color: #007700">]);
+        }
+
+        </span><span style="color: #0000BB">$date </span><span style="color: #007700">= </span><span style="color: #0000BB">formatMMDay</span><span style="color: #007700">(</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'date'</span><span style="color: #007700">]);
+        </span><span style="color: #0000BB">$whenKaji </span><span style="color: #007700">= </span><span style="color: #0000BB">formatWhenKaji</span><span style="color: #007700">(</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'when'</span><span style="color: #007700">]);
+        global </span><span style="color: #0000BB">$PYNK5</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$style </span><span style="color: #007700">= (</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'LY'</span><span style="color: #007700">] % </span><span style="color: #0000BB">2 </span><span style="color: #007700">== </span><span style="color: #0000BB">0</span><span style="color: #007700">) ? </span><span style="color: #DD0000">"background-color: </span><span style="color: #0000BB">$PYNK5</span><span style="color: #DD0000">; color: white;" </span><span style="color: #007700">: </span><span style="color: #DD0000">"background-color: black; color: </span><span style="color: #0000BB">$PYNK5</span><span style="color: #DD0000">;"</span><span style="color: #007700">;
+
+        if (</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'position'</span><span style="color: #007700">] == </span><span style="color: #0000BB">null</span><span style="color: #007700">) </span><span style="color: #0000BB">$style </span><span style="color: #007700">= </span><span style="color: #DD0000">'background-color: red; color: white;'</span><span style="color: #007700">;
+        if (</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'when'</span><span style="color: #007700">] == </span><span style="color: #DD0000">'404'</span><span style="color: #007700">) </span><span style="color: #0000BB">$style </span><span style="color: #007700">.= </span><span style="color: #DD0000">'text-decoration: line-through;'</span><span style="color: #007700">;
+        if (</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'when'</span><span style="color: #007700">] == </span><span style="color: #0000BB">1212</span><span style="color: #007700">) </span><span style="color: #0000BB">$style </span><span style="color: #007700">= </span><span style="color: #DD0000">'background-color: yellow; color: black'</span><span style="color: #007700">;
+
+        </span><span style="color: #0000BB">$DOOT </span><span style="color: #007700">= new </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2024-07-25 00:00:00'</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$THIS86 </span><span style="color: #007700">= new </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2024-08-06 23:59:59'</span><span style="color: #007700">);
+        </span><span style="color: #0000BB">$LGATE </span><span style="color: #007700">= </span><span style="color: #DD0000">"&amp;nbsp;🦁&amp;nbsp;🐬&amp;nbsp;"</span><span style="color: #007700">;
+        if (</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'datetime'</span><span style="color: #007700">] &gt;= </span><span style="color: #0000BB">$DOOT </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'datetime'</span><span style="color: #007700">] &lt;= </span><span style="color: #0000BB">$THIS86</span><span style="color: #007700">) </span><span style="color: #0000BB">$loopCode </span><span style="color: #007700">= </span><span style="color: #0000BB">$LGATE</span><span style="color: #007700">;
+
+        </span><span style="color: #0000BB">$kount </span><span style="color: #007700">= </span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">'%03d'</span><span style="color: #007700">, </span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'kount'</span><span style="color: #007700">]);
+        </span><span style="color: #0000BB">$d </span><span style="color: #007700">= </span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">, </span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'date'</span><span style="color: #007700">]);
+        </span><span style="color: #0000BB">$date1260 </span><span style="color: #007700">= </span><span style="color: #0000BB">$d</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'M-d'</span><span style="color: #007700">);
+        if (</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">$date1260</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">3</span><span style="color: #007700">) == </span><span style="color: #DD0000">"Feb"</span><span style="color: #007700">) {
+            </span><span style="color: #0000BB">$day </span><span style="color: #007700">= (int)</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">$date1260</span><span style="color: #007700">, </span><span style="color: #0000BB">4</span><span style="color: #007700">);
+            if (</span><span style="color: #0000BB">$day </span><span style="color: #007700">&lt;= </span><span style="color: #0000BB">9</span><span style="color: #007700">) {
+                </span><span style="color: #0000BB">$day </span><span style="color: #007700">+= </span><span style="color: #0000BB">31</span><span style="color: #007700">;
+                </span><span style="color: #0000BB">$date1260 </span><span style="color: #007700">= </span><span style="color: #DD0000">"Jan-</span><span style="color: #0000BB">$day</span><span style="color: #DD0000">"</span><span style="color: #007700">;
+            }
+        }
+        if (</span><span style="color: #0000BB">$date1260 </span><span style="color: #007700">== </span><span style="color: #DD0000">"Dec-21" </span><span style="color: #007700">|| </span><span style="color: #0000BB">$date1260 </span><span style="color: #007700">== </span><span style="color: #DD0000">"Jan-40"</span><span style="color: #007700">) </span><span style="color: #0000BB">$style </span><span style="color: #007700">.= </span><span style="color: #DD0000">'background-color: blue; color: white;'</span><span style="color: #007700">;
+        if (</span><span style="color: #0000BB">$date1260 </span><span style="color: #007700">== </span><span style="color: #DD0000">"Jul-25"</span><span style="color: #007700">) </span><span style="color: #0000BB">$style </span><span style="color: #007700">.= </span><span style="color: #DD0000">'background-color: red; color: white;'</span><span style="color: #007700">;
+        if (</span><span style="color: #0000BB">$date1260 </span><span style="color: #007700">== </span><span style="color: #DD0000">"Oct-08"</span><span style="color: #007700">) {
+            </span><span style="color: #0000BB">$style </span><span style="color: #007700">.= </span><span style="color: #DD0000">'background-color: red; color: white;'</span><span style="color: #007700">;
+            </span><span style="color: #0000BB">$loopCode </span><span style="color: #007700">= </span><span style="color: #0000BB">$LGATE </span><span style="color: #007700">. </span><span style="color: #DD0000">"🛑"</span><span style="color: #007700">;
+        }
+        if (</span><span style="color: #0000BB">$_da</span><span style="color: #007700">[</span><span style="color: #DD0000">'when'</span><span style="color: #007700">] == </span><span style="color: #0000BB">333</span><span style="color: #007700">) </span><span style="color: #0000BB">$loopCode </span><span style="color: #007700">= </span><span style="color: #DD0000">""</span><span style="color: #007700">;
+
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;tr style="' </span><span style="color: #007700">. </span><span style="color: #0000BB">$style </span><span style="color: #007700">. </span><span style="color: #DD0000">'"&gt;'</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">"&lt;td&gt;" </span><span style="color: #007700">. </span><span style="color: #0000BB">$kount </span><span style="color: #007700">. </span><span style="color: #DD0000">"&lt;/td&gt;"</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;td style="font-size: 0.9em"&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">$date </span><span style="color: #007700">. </span><span style="color: #DD0000">'&lt;/td&gt;'</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;td style="text-decoration: line-through"&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">$date1260 </span><span style="color: #007700">. </span><span style="color: #DD0000">"&lt;/td&gt;"</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;td&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">$whenKaji</span><span style="color: #007700">. </span><span style="color: #DD0000">'&lt;/td&gt;'</span><span style="color: #007700">;        
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;td&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">$loopCode </span><span style="color: #007700">. </span><span style="color: #DD0000">'&lt;/td&gt;'</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;td&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">$position</span><span style="color: #007700">. </span><span style="color: #DD0000">'&lt;/td&gt;'</span><span style="color: #007700">;
+        </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;/tr&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+    }
+
+    </span><span style="color: #0000BB">$DROP </span><span style="color: #007700">.= </span><span style="color: #DD0000">'&lt;/table&gt;'</span><span style="color: #007700">;
+    return </span><span style="color: #0000BB">$DROP</span><span style="color: #007700">;
+}
+
+function </span><span style="color: #0000BB">getLoopYearFromUnixTimestamp</span><span style="color: #007700">(</span><span style="color: #0000BB">$timestamp</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$date </span><span style="color: #007700">= </span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'m-d-Y'</span><span style="color: #007700">, </span><span style="color: #0000BB">$timestamp</span><span style="color: #007700">);
+    </span><span style="color: #0000BB">$toneData </span><span style="color: #007700">= </span><span style="color: #0000BB">getToneData</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">);
+    if (!</span><span style="color: #0000BB">$toneData</span><span style="color: #007700">) {
+        return </span><span style="color: #0000BB">null</span><span style="color: #007700">;
+    }
+    return </span><span style="color: #0000BB">getLoopYear</span><span style="color: #007700">(</span><span style="color: #0000BB">$toneData</span><span style="color: #007700">);
+}
+
+if (</span><span style="color: #0000BB">defined</span><span style="color: #007700">(</span><span style="color: #DD0000">'PROCESS_REQUEST'</span><span style="color: #007700">)) {
+    return;
+}
+
+</span><span style="color: #0000BB">$startDate </span><span style="color: #007700">= </span><span style="color: #DD0000">"12-12-2023"</span><span style="color: #007700">;
+</span><span style="color: #0000BB">$TEXAS_CENTRAL </span><span style="color: #007700">= </span><span style="color: #DD0000">'America/Chicago'</span><span style="color: #007700">;
+</span><span style="color: #0000BB">$DAYS_OUTTA_TIME </span><span style="color: #007700">= </span><span style="color: #0000BB">1</span><span style="color: #007700">;
+</span><span style="color: #0000BB">$LOOPS_TO_SHOW </span><span style="color: #007700">= </span><span style="color: #0000BB">35</span><span style="color: #007700">;
+</span><span style="color: #0000BB">$DA_KOUNT </span><span style="color: #007700">= </span><span style="color: #0000BB">$LOOPS_TO_SHOW </span><span style="color: #007700">* </span><span style="color: #0000BB">13 </span><span style="color: #007700">+ </span><span style="color: #0000BB">$DAYS_OUTTA_TIME</span><span style="color: #007700">;
+
+</span><span style="color: #0000BB">date_default_timezone_set</span><span style="color: #007700">(</span><span style="color: #0000BB">$TEXAS_CENTRAL</span><span style="color: #007700">);
+</span><span style="color: #0000BB">$_kalada </span><span style="color: #007700">= </span><span style="color: #0000BB">generateKalada</span><span style="color: #007700">(</span><span style="color: #0000BB">$startDate</span><span style="color: #007700">, </span><span style="color: #0000BB">$DA_KOUNT</span><span style="color: #007700">);
+
+echo </span><span style="color: #DD0000">"&lt;br&gt;&lt;br&gt;&lt;h2&gt;🦎 loopy&lt;/h2&gt;&lt;br&gt;"</span><span style="color: #007700">;
+echo </span><span style="color: #0000BB">printKalada</span><span style="color: #007700">(</span><span style="color: #0000BB">$_kalada</span><span style="color: #007700">);
+echo &lt;&lt;&lt;HTML
+</span><span style="color: #DD0000">&lt;br&gt;
+&lt;pre style="font-size: 18px;"&gt;202X ☠️ 808
+Gregorian Loop kalada
+&lt;a href="loopy?PH3=1"&gt;loopy.PH3&lt;/a&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;/pre&gt;
+</span><span style="color: #007700">HTML;
+</span><span style="color: #0000BB">?&gt;
+</span></code></pre>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="gl1sh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscilloscope ft. NAINCY3</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0e0e0e;
+            overflow: hidden;
+        }
+        .values {
+            position: absolute;
+            top: 20px;
+            font-size: 16px;
+            color: #ff1987;
+            text-align: center;
+            font-family: "Courier New", monospace;
+        }
+        .value-label {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="values">
+        <div class="value-label" id="THEN">TH3N: Loading...</div>
+        <div class="value-label" id="NOW">N0W: Loading...</div>
+        <div class="value-label" id="SOON">S00N: Loading...</div>
+    </div>
+    <canvas id="PENGU_Oscilloscope" width="600" height="200"></canvas>
+
+    <script>
+        let T3HN = Date.now() / 1000;
+        let r = 3.9;
+        let x = 0.5;
+
+        let PENGU_Oscilloscope = document.getElementById("PENGU_Oscilloscope");
+        let ctx = PENGU_Oscilloscope.getContext("2d");
+
+        function L33tStep(now) {
+            x = r * x * (1 - x);
+            let TYMESL1P = Math.floor(200 + x * 1000);
+            T3HN += TYMESL1P;
+            const S00N = T3HN + TYMESL1P;
+
+            return {
+                T3HN: T3HN + Math.sin(x * 1000) * 50,
+                now: now,
+                S00N: S00N + Math.sin(x * 2000) * 20
+            };
+        }
+
+        function drawWave() {
+            const now = Date.now() / 1000;
+            const { T3HN, S00N } = L33tStep(now);
+
+            document.getElementById("THEN").textContent = `TH3N: ${Math.floor(T3HN)}`;
+            document.getElementById("NOW").textContent = `N0W: ${Math.floor(now)}`;
+            document.getElementById("SOON").textContent = `S00N: ${Math.floor(S00N)}`;
+
+            ctx.clearRect(0, 0, PENGU_Oscilloscope.width, PENGU_Oscilloscope.height);
+
+            const centerX = PENGU_Oscilloscope.width / 2;
+            const centerY = PENGU_Oscilloscope.height / 2;
+
+            const frequency = Math.sin(T3HN * 0.0001) * 0.5 + 0.5;
+            const amplitude = 50 + Math.sin(S00N * 0.001) * 30;
+
+            ctx.beginPath();
+            ctx.moveTo(0, centerY);
+            for (let x = 0; x < PENGU_Oscilloscope.width; x++) {
+                const y = centerY + amplitude * Math.sin(frequency * (x / PENGU_Oscilloscope.width) * Math.PI * 2 + now);
+                ctx.lineTo(x, y);
+            }
+            ctx.strokeStyle = '#ff1987';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        }
+
+        function animate() {
+            drawWave();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="gL1sh">
+<head>
+<meta charset="UTF-8"/>
+<meta name="robots" content="none">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+.navbar div {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  z-index: 333;  
+  position: fixed;
+  float: left;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 535px;   
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #9933CC; 
+  color: white; 
+}
+
+.navbar-bottom {
+  z-index: 333; 
+  left: 0; 
+  max-width: 535px;   
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  text-align: right;   
+  width: 100%;
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #9933CC; 
+  color: white;
+}
+
+#vvana180-zsymbol-head {
+  width: 23px; 
+  transform: rotate(180deg);
+}
+
+#vvana180-zsymbol {
+  width: 23px; 
+}
+
+#vvana180-zsymbol-key {
+  text-decoration: none;
+}
+
+#vvana180-113:link, #vvana180-113:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#vvana180-now:link, #vvana180-now:visited {
+    text-decoration: none;
+    font-size: 0.9em; 
+    color: white;
+    margin-left: 7px;
+    margin-right: 2px;    
+}
+
+#vvana180-T1A:link, #vvana180-T1A:visited {
+    text-decoration: none;
+    font-size: 0.7em; 
+    color: yellow;
+    border-top: 0px solid yellow;    
+    margin-left: 7px;
+    margin-right: 2px;
+}
+
+.overline {
+  border-top: 1px solid white; 
+  color: white;
+}
+
+.overline-now {
+  border-top: 1px solid white;
+}
+
+.buttons {
+  background-color: black;
+  padding: 4px 8px;
+}
+
+#dedclock {
+  background-color: red;
+  color : white;
+}
+
+#vvana180-past:link, #vvana180-past:visited {
+    text-decoration: none;
+    border-top: 0px solid white; 
+    font-size: 0.7em; 
+    color: white;
+    margin-left: 12px;
+}
+
+#vvana180-zone {
+  color: #bbb;
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+
+#vvana180-tail {
+  margin-top: 22px;  
+  color: #999; 
+  font-size: 0.7em;
+}
+
+a.twelvetwelve:link, a.twelvetwelve:visited  {
+  text-decoration: overline;
+  color: white;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    margin: 20px;   
+    margin-top: 51px;
+    margin-bottom: 51px;
+    margin-left: 9px;
+    margin-right: 9px;
+    max-width: 555px;
+    font-size: 17px;
+    line-height: 1.6;
+    background-color: black;
+    color: white;
+    opacity: 1;
+}
+
+input::placeholder {
+    color: #D3D3D3; 
+    margin: top;
+}
+ 
+.input-box {
+  width: 80%;
+  font-size: 18px;
+  margin-top: 3px; 
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 0px; /* Spacing under labels */
+  display: inline-block;
+}
+
+@font-face {
+    font-family: 'ign0';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/Karn9.fonts/Ignotum-7BMMw.ttf);
+}   
+
+@font-face {
+    font-family: 'cfreak';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/Karn9.fonts/CarnivaleeFreakshow-DLrm.ttf);
+}   
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1.0;
+}
+
+#iiz-vvana {
+  background-color: yellow; 
+  font-size: 0.6em; 
+  color: black;
+  padding: 1px;
+  margin-left: 20px;
+  border-radius: 0.1em;
+}
+
+#iiz-LY21 {
+  background-color: yellow; 
+  font-size: 1.0em; 
+  color: black;
+  padding: 3px;
+  border-radius: 0.1em;
+}
+
+#vartan1 {
+  background-color: red; 
+  font-size: 1.0em; 
+  color: white;
+  padding: 3px;
+  border-radius: 0.1em;
+}
+
+.dr0p {
+  overflow-wrap: break-word;
+  word-break: break-word;  
+  text-align: right;
+  max-width: 520px; 
+  font-size: 0.9em;
+  padding: 12px;
+  margin-top: 1px;  
+  margin-bottom: 0px;
+  border-top-right-radius: 0.8em;
+  border-top-left-radius: 0.8em;
+  border-bottom-left-radius: 0.8em;
+  background-color: white;
+  border: 1px solid white;
+}
+
+.gener1k {
+  text-align: left;
+  font-size: 1.0em;
+#  font-family: Georgia; 
+  background-color: #9933CC;
+  line-height: 1.6em;
+  color: white;
+}
+
+.luka404 {
+  text-align: left;
+  font-size: 1.0em;
+  font-family: Georgia; 
+  background-color: #ddd;
+  line-height: 1.6em;
+  color: black;
+}
+
+.luka404 a.k9key {   
+    color: blue;
+    text-decoration: overline;
+    
+}
+
+.a { 
+   color: blue;
+    text-decoration: overline; 
+} 
+
+.a3pm {
+  text-align: left;
+  font-size: 1.0em;
+  font-family: Georgia; 
+  background-color: lightgreen;
+  line-height: 1.6em;
+  color: black;
+
+}
+
+.a3pm a.k9key:link,
+.a3pm a.k9key:visited {
+    color: blue;
+    text-decoration: overline;
+}
+
+
+.alyr1k::before {
+    content: "🎼";
+    margin-right: 5px;
+}
+
+.alyr1k {
+  text-align: left;
+  font-size: 0.9em;
+  font-family: Verdana; 
+  line-height: 1.6em;
+  background-color: white;  
+  color: black;
+}
+
+
+.xtube {
+  text-align: left;
+  font-size: 1.0em;
+  font-family: Georgia; 
+  background-color: red;
+  line-height: 1.6em;
+  color: white;
+}
+
+
+a:link,
+a:visited {
+    color: #3498DB;
+}
+
+a.k9key:link,
+a.k9key:visited {
+  color: #3498DB;
+  text-decoration: overline; 
+}
+
+a.kaj:link,
+a.kaj:visited {
+    text-decoration: none; 
+}
+
+a.cyberlink:link,
+a.cyberlink:visited {
+    text-decoration: underline; 
+}
+
+.stargate {
+    width: 525px;
+    height: 525px;
+    fill: black;
+
+}        
+
+.fade-text {
+  background: linear-gradient(to right, yellow 33%, rgba(255, 255, 0, 0.2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: black; 
+}
+
+.bl1nky2 {        
+    animation: animate2 4s ease infinite;
+}      
+
+@keyframes animate2 {
+    0% {
+        opacity: 0.5;
+    }
+
+    1% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1.0;
+    }
+
+    100% {
+        opacity: 0.24;
+    }
+}
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 60px;
+    border: 3px solid rgba(255, 0, 119, 0.5); 
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background: #ff0077;
+    color: white;
+    border-radius: 5px;
+}
+.pulsing-border {
+    animation: pulse-border 1.5s infinite;
+}
+@keyframes pulse-border {
+    0% { border-color: rgba(255, 0, 119, 0.5); }
+    50% { border-color: rgba(255, 0, 119, 1); }
+    100% { border-color: rgba(255, 0, 119, 0.5); }
+
+</style>
+
+
+</head>
+<body>
+<nav class="navbar">
+<div>
+<a id="vvana180-113" href="/1212">𓇢𓆸</a>&nbsp;
+<a class="twelvetwelve" style="font-size: 0.7em; padding-left: 3px;" href="/exp/3397">33:97</a>
+<span id="iiz-vvana">the:17</span>
+<script>
+function updateTimestamp() {
+    let now = Math.floor(Date.now() / 1000).toString();
+    let formatted = `${now.slice(0, 4)}:${now.slice(4, 5)}:${now.slice(5, 7)}:${now.slice(7)}`;
+    document.getElementById("iiz-vvana").textContent = formatted;
+}
+
+setInterval(updateTimestamp, 1000);
+updateTimestamp();
+</script>
+<a class="kaj" style="padding-left: 18px" href="404">💾</a>
+<a style="font-size: 0.7em; padding-left: 3px;"> ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀#9933CC 𖤐</a>
+</div>
+</nav>
+
+<nav class="navbar-bottom">
+<div style="padding-right: 7px">
+<a class="kaj" target=_blank style="background-color: black; border-radius: 3px; padding: 0 9px" href="220">🏛️</a>
+<a class="kaj" style="background-color: black; border-radius: 3px; padding: 0 9px" href="325">☁️</a>
+<a class="kaj" style="background-color: black; border-radius: 3px; padding: 0 9px" href="liber.pdf">💌</a>
+<a id="vvana180-113" href="/exp/missedkalls">𓅓</a>
+</div>
+</nav>
+
+<nav class="navbar-bottom">
+<div style="padding-right: 7px"> 
+<a class="kaj" target=_blank style="background-color: black; border-radius: 3px; padding: 0 9px" href="220">🏛️</a>
+<a hidden class="kaj" style="background-color: black; border-radius: 3px; padding: 0 9px" href="jr3">🦒</a>
+<a class="kaj" style="background-color: black; border-radius: 3px; padding: 0 9px" href="325">☁️</a>
+<a class="kaj" style="background-color: black; border-radius: 3px; padding: 0 9px" href="liber.pdf">💌</a>
+<a id="vvana180-113" href="/exp/missedkalls">𓅓</a>  
+</div>
+</nav>
+<h1>#9933CC</h1>
+   <p> </p>
+          <p> </p>
+<img src="phosphorus.png" alt="1212">
+<h1>12:12</h1>
+<p> </p>
+<p>⚙️📨❗️<a href="/wmw/319"> ≽༏≼ </a>:re$ponzse.prot0kooll⚙️📨❗️</p>
+
+<div class="dr0p" style="background-color: black; color: white; text-align: center; text-font: monospace">
+<pre>              W@@@@              
+             @<a href="220">220</a>@@            
+             @     @@            
+          I@@@@@ d@@@@w          
+ @@@@@@@@@@    )@z    @@@@@@@@@@ 
+@@    ^@        @        @O    @@
+@@<a href="1313">1313</a>@@@@@@@@@@@@@@@@@@@<a href="8o8">8o8</a>/@
+ @@@@@@         @         @@@@@@ 
+   @@ @>        @         @ @@   
+   @@  @@       @       @@< @@   
+   @@   @@      @      @@   @@   
+   @@    @@     @     @@    @@   
+ @@@@@@   @@    @    @@   @@@@@@ 
+@@<a href="666">666</a>@@@@@@@@@@@@@@@@@@@<a href="93">93</a>}@
+@@    :@    @@  @  @@    @Z    @@
+ @@@@@@;@@@   @ @ @@  @@@[@@@@@@ 
+   '@      @@@@a z@@@@v     @@   
+   @@        @     @@       @@   
+   d@       $@<a href="1212">1212</a>@@       @@   
+   @@    @@@@ @@@@@l@@@@    @@   
+ @@  @@@@       @       @@@@  @@ 
+@r<a href="325">325</a>@@@@@@@@@@@@@@@@@@@<a href="ternary">btrfly</a>@
+1@    @@        @        @@    @@
+ C@@@@@ @@@@   @@@j  M@@@ @@@@@@ 
+      @@   r@@@   @@@a   @@      
+       @@   Q@<a href="404">404</a>@@   @@       
+        @@   @@   c@   @@        
+         0@   @@@@@   @@         
+          b@    @    @@          
+           x@b  @   @@           
+             @  @  @j            
+              @@@@@>             
+             @     @Z            
+            @@<a href="index">wIndx</a>@@            
+             @@   @@             
+    @@@   </pre></div>
+    <p> </p>
+    <p> </p>
+     <h1>legend</h1>
+    <div class="dr0p" style="background-color: black; color: white; text-align: left; text-font: monospace">
+      <p><a href="220">220</a> :  the book 📖 of Law  🤍ྀི🏛️</p>
+      <p><a href="1313">1313</a> :☎️ DIALL:UPPP ☎️</p>
+      <p><a href="8o8">8o8</a> : BoB 👨 </p>
+      <p><a href="666">666</a> : 🦑 🔊 : soondkloud by Myjzsa666</p>
+      <p><a href="93">93</a> : M0v13SZ!!1! 🎬 (k i n o)</p>
+      <p><a href="1212">1212</a> : 1+2=3 = tree = (here-now) ᨒ↟𖠰 </p>
+      <p><a href="325">325</a> : look arouund 🧏🏻‍♀️ gellry</p>
+      <p><a href="ternary">btrfly</a> : k0de of de tetetereterer bttrfleg #knmnz915 bla</p>
+      <p><a href="404">404</a> : cygate redirektory maajik</p>
+      <p><a href="index">wIndx</a> : door-on-d-floor (welllkom) indexx</p>
+      <p><a href="/exp/3397">33:97</a> kan10th : 𓁿𓁿𓁿𓁿𓁿𓁿𓁿𓁿𓁿𓁿
+      </div>
+      <p> </p>
+      <div class="dr0p" style="background-color: black; color: white; text-align: center; text-font: monospace"><img src="mystery_photo.jpg" alt="mfjpg">
+</div>
+</body>
+</html>
