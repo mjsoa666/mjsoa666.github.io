@@ -1,0 +1,1141 @@
+
+<!DOCTYPE html>
+<html lang="gL1sh">
+<head>
+<meta charset="UTF-8"/>
+<meta name="robots" content="none">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+.navbar div {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  z-index: 333;  
+  position: fixed;
+  float: left;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 535px;   
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #FF1987; 
+  color: white; 
+}
+
+.navbar-bottom {
+  z-index: 333; 
+  left: 0; 
+  max-width: 535px;   
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  text-align: right;   
+  width: 100%;
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #FF1987; 
+  color: white;
+}
+
+#vvana180-zsymbol-head {
+  width: 23px; 
+  transform: rotate(180deg);
+}
+
+#vvana180-zsymbol {
+  width: 23px; 
+}
+
+#vvana180-zsymbol-key {
+  text-decoration: none;
+}
+
+#vvana180-113:link, #vvana180-113:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#vvana180-now:link, #vvana180-now:visited {
+    text-decoration: none;
+    font-size: 0.9em; 
+    color: white;
+    margin-left: 7px;
+    margin-right: 2px;    
+}
+
+#vvana180-T1A:link, #vvana180-T1A:visited {
+    text-decoration: none;
+    font-size: 0.7em; 
+    color: yellow;
+    border-top: 0px solid yellow;    
+    margin-left: 7px;
+    margin-right: 2px;
+}
+
+.overline {
+  border-top: 1px solid white; 
+  color: white;
+}
+
+.overline-now {
+  border-top: 1px solid white;
+}
+
+.buttons {
+  background-color: black;
+  padding: 4px 8px;
+}
+
+#dedclock {
+  background-color: red;
+  color : white;
+}
+
+#vvana180-past:link, #vvana180-past:visited {
+    text-decoration: none;
+    border-top: 0px solid white; 
+    font-size: 0.7em; 
+    color: white;
+    margin-left: 12px;
+}
+
+#vvana180-zone {
+  color: #bbb;
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+
+#vvana180-tail {
+  margin-top: 22px;  
+  color: #999; 
+  font-size: 0.7em;
+}
+
+a.twelvetwelve:link, a.twelvetwelve:visited  {
+  text-decoration: overline;
+  color: white;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inconsolata.zs', monospace;
+    margin: 20px;   
+    margin-top: 51px;
+    margin-bottom: 51px;
+    margin-left: 9px;
+    margin-right: 9px;
+    max-width: 555px;
+    font-size: 17px;
+    line-height: 1.6;
+    background-color: black;
+    color: white;
+    opacity: 1;
+}
+
+input::placeholder {
+#    color: #D3D3D3; 
+    margin: top;
+}
+ 
+.input-box {
+  width: 80%;
+  font-size: 18px;
+  margin-top: 3px; 
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 0px; /* Spacing under labels */
+  display: inline-block;
+}
+
+@font-face {
+    font-family: 'ign0';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/Karn9.fonts/Ignotum-7BMMw.ttf);
+}   
+
+@font-face {
+    font-family: 'cfreak';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/Karn9.fonts/CarnivaleeFreakshow-DLrm.ttf);
+}   
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1.0;
+}
+
+#iiz-vvana {
+  background-color: yellow; 
+  font-size: 0.6em; 
+  color: black;
+  padding: 1px;
+  margin-left: 20px;
+  border-radius: 0.1em;
+}
+
+span.aiz {
+  background-color: #FF1987; 
+  font-size: 1.0em; 
+  color: white;
+  padding: 3px;
+  border-radius: 0.1em;
+}
+
+#iiz-LY21 {
+  background-color: yellow; 
+  font-size: 1.0em; 
+  color: black;
+  padding: 3px;
+  border-radius: 0.1em;
+}
+
+#vartan1 {
+  background-color: red; 
+  font-size: 1.0em; 
+  color: white;
+  padding: 3px;
+  border-radius: 0.1em;
+}
+
+.dr0p {
+  overflow-wrap: break-word;
+  word-break: break-word;  
+  text-align: right;
+  max-width: 520px; 
+  font-size: 0.9em;
+  line-height: 1.9em;
+  padding: 12px;
+  margin-top: 1px;  
+  margin-bottom: 0px;
+  border-top-right-radius: 0.8em;
+  border-top-left-radius: 0.8em;
+  border-bottom-left-radius: 0.8em;
+  background-color: white;
+  border: 1px solid white;
+}
+
+.gener1k {
+  text-align: left;
+  font-size: 1.0em;
+#  font-family: Georgia; 
+  background-color: #ff1987;
+  line-height: 1.6em;
+  color: white;
+}
+
+.luka404 {
+  text-align: left;
+  font-size: 1.0em;
+  font-family: Georgia; 
+  background-color: #ddd;
+  line-height: 1.6em;
+  color: black;
+}
+
+.luka404 a.k9key {   
+    color: blue;
+    text-decoration: overline;
+} 
+
+.a3pm {
+  text-align: left;
+ font-size: 0.8em;
+#  font-family: Georgia; 
+  background-color: lightgreen;
+#  line-height: 1.6em;
+  color: black;
+
+}
+
+.a3pm a.k9key:link,
+.a3pm a.k9key:visited {
+    color: blue;
+    text-decoration: overline;
+}
+
+
+.alyr1k::before {
+    content: "🎼";
+    margin-right: 5px;
+}
+
+.alyr1k {
+  text-align: left;
+  font-size: 0.9em;
+  font-family: Verdana; 
+  line-height: 1.6em;
+  background-color: white;  
+  color: black;
+}
+
+
+.xtube {
+  text-align: left;
+  font-size: 1.0em;
+  font-family: Georgia; 
+  background-color: red;
+  line-height: 1.6em;
+  color: white;
+}
+
+
+a:link,
+a:visited {
+    color: #3498DB;
+}
+
+a.k9key:link,
+a.k9key:visited {
+  color: #3498DB;
+  text-decoration: overline; 
+}
+
+a.kaj:link,
+a.kaj:visited {
+    text-decoration: none; 
+}
+
+a.cyberlink:link,
+a.cyberlink:visited {
+    text-decoration: underline; 
+}
+
+.stargate {
+    width: 525px;
+    height: 525px;
+    fill: black;
+
+}        
+
+.fade-text {
+  background: linear-gradient(to right, yellow 33%, rgba(255, 255, 0, 0.2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: black; 
+}
+
+.bl1nky2 {        
+    animation: animate2 4s ease infinite;
+}      
+
+@keyframes animate2 {
+    0% {
+        opacity: 0.5;
+    }
+
+    1% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1.0;
+    }
+
+    100% {
+        opacity: 0.24;
+    }
+}
+/* Shared button shell */
+.radial-shell, .btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 60px;
+    border: 3px solid rgba(255, 0, 119, 0.5);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Pulse when active */
+.station-active {
+    animation: pulseBorder 1.5s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulseBorder {
+    0%   { border-color: rgba(255, 0, 119, 0.5); box-shadow: 0 0 5px rgba(255, 0, 119, 0.3); }
+    50%  { border-color: rgba(255, 0, 119, 1);   box-shadow: 0 0 15px rgba(255, 0, 119, 0.6); }
+    100% { border-color: rgba(255, 0, 119, 0.5); box-shadow: 0 0 5px rgba(255, 0, 119, 0.3); }
+}
+
+/* Radial button style */
+.radial-btn, .btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background: #ff0077;
+    color: white;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Fun hover (optional) */
+.radial-btn:hover, .btn:hover {
+    transform: scale(1.05);
+    background: #e6006b;
+}
+
+</style>
+</head>
+<body style="opacity: 0.333">
+<nav class="navbar">
+<div>
+<a id="vvana180-113" href="/113"><img id="vvana180-zsymbol" src="/zsymbol.light.png"/></a>&nbsp;
+<a class="twelvetwelve" style="font-size: 0.7em; padding-left: 3px;" href="/1212">12:12</a>
+<span onclick="copyDivToClipboard('iiz-vvana')" id="iiz-vvana">the:17</span>
+<a class="kaj" style="padding-left: 18px" href="525">🔔</a>
+</div>
+</nav>
+
+<nav class="navbar-bottom">
+<div style="padding-right: 7px"> 
+<a class="kaj" target=_blank style="background-color: yellow; border-radius: 3px; padding: 0 9px" href="https://www.tymeis.art">💳</a>
+<a class="kaj" style="opacity: 1.0; background-color: black; border-radius: 3px; padding: 0 9px" href="llama">🦙</a>
+<a hidden class="kaj" style="background-color: black; border-radius: 3px; padding: 0 9px" href="pnthr07">🐾</a>
+<a class="kaj" style="background-color: black; border-radius: 3px; padding: 0 9px" href="ella07">🐘</a>
+<a id="vvana180-113" href="125"><img id="vvana180-zsymbol-head" src="/zsymbol.light.png"/></a>  
+</div>
+</nav>
+<h2 style="margin:0">popupp ≽༏≼</h2><span style="padding: 2px; background-color: black; color: yellow; font-size: 0.9em" id="s1ncer">#ff1987</span><br>
+<br>
+<div class="dr0p" style="background-color: white; color: black; text-align: left; font-family: "Georgia", "Times New Roman", serif;">
+[10] visit Tyme:Art <a class="k9key" href="https://www.tymeis.art">$tationary</a><br>
+[20] zsynkupp 💳 with 🎈 1-pynk-balloon MFT<br>
+[30] feed MFT-License-key to La:Machine 🦙<br>
+[40] receive ✨ PYN kode [keep private]<br>
+[50] kanfirm CYBR via 🐘<br>
+[60] visit <a class="k9key" href="525">525</a> for place in line<br>
+</div><br>
+<canvas id="404-clock" width="325" height="325"></canvas><br>
+<br>
+<br>
+
+<script>
+function padLeft(number, length, character) {
+    if (character == null) {
+        character = '0';
+    }
+    var result = String(number);
+    for (var i = result.length; i < length; ++i) {
+        result = character + result;
+    }
+    return result;
+}
+
+// var ts = 1739137545;
+// var ts = 1739483145;
+var ts = 1742808333;
+var countDownDate = new Date(ts * 1000);
+
+function k0untr() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    hours = padLeft(hours, 2);
+    minutes = padLeft(minutes, 2);  
+    seconds = padLeft(seconds, 2);   
+
+    var snake = "<span class='bl1nky2'>:</span>";
+    var khtml = "⏳ " + days + "d" + snake + hours + "h" + snake + minutes + "m" + snake + seconds + "s";
+
+    var el = document.getElementById("k0untr");
+    if (el) {
+        el.innerHTML = khtml;
+
+        if (distance < 0) {
+            clearInterval(x);
+            el.innerHTML = "#kanamanazhia";
+        }
+    }
+}
+
+
+var ts13 = 1745152808;
+var countDownDate13 = new Date(ts13 * 1000);
+
+function k0untr13() {
+    var now = new Date().getTime();
+    var distance = countDownDate13 - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    hours = padLeft(hours, 2);
+    minutes = padLeft(minutes, 2);  
+    seconds = padLeft(seconds, 2);   
+
+    var snake = "<span class='bl1nky2'>:</span>";
+    var khtml = days + "d" + snake + hours + "h" + snake + minutes + "m" + snake + seconds + "s";
+
+    var el = document.getElementById("k0untr13");
+    if (el) {
+        el.innerHTML = khtml;
+
+        if (distance < 0) {
+            clearInterval(x);
+            el.innerHTML = "#kanamanazhia";
+        }
+    }
+}
+
+var ts345 = 1745152808;
+var countDownDate345 = new Date(ts345 * 1000);
+
+function k0untr345() {
+    var now = new Date().getTime();
+    var distance = countDownDate345 - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    hours = padLeft(hours, 2);
+    minutes = padLeft(minutes, 2);  
+    seconds = padLeft(seconds, 2);   
+
+    var snake = "<span class='bl1nky2'>:</span>";
+    // var khtml = "⏳ " + days + "d" + snake + hours + "h" + snake + minutes + "m" + snake + seconds + "s";
+    var khtml = "⏳ " + hours + "h" + snake + minutes + "m" + snake + seconds + "s";
+    // var khtml = "⏳ " + minutes + "m" + snake + seconds + "s";
+
+    var el = document.getElementById("k0untr345");
+    if (el) {
+        el.innerHTML = khtml;
+
+        if (distance < 0) {
+            clearInterval(x);
+            el.innerHTML = "#kanamanazhia";
+        }
+    }
+}
+
+function copyDivToClipboard(z) {
+    var range = document.createRange();
+    var thisDiv = document.getElementById(z);
+    range.selectNode(thisDiv);
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();// to deselect
+    var nowBG = thisDiv.style.backgroundColor;
+    thisDiv.style.backgroundColor = 'orange';
+    setTimeout(function() {
+      thisDiv.style.backgroundColor = nowBG;
+   }, 50);
+}
+
+function formatIIZ_3214(seconds) {
+    var timeString = seconds.toString();
+    var part1 = timeString.slice(0, 4);
+    var part2 = timeString.slice(4, 5);
+    var part3 = timeString.slice(5, 7);
+    var part4 = timeString.slice(7, 10);
+
+    var dot = "<span class='bl1nky2'>:</span>";
+    var formattedTime = part1 + dot + part2 + dot + part3 + dot + part4;
+
+    return formattedTime;
+}
+
+function iz_drawKlok() {
+    var now = Math.floor(new Date().getTime() / 1000);
+    var referenceOffset = 725;
+    now = now - referenceOffset;
+
+    var formattedTime = formatIIZ_3214(now);
+
+    var element1 = document.getElementById("iiz-LY21");
+    if (element1) {
+        element1.innerHTML = formattedTime;
+    }
+
+    var element2 = document.getElementById("iiz-vvana");
+    if (element2) {
+        element2.innerHTML = formattedTime;
+    }
+}
+
+function draw_the17short() {
+
+    function formatthe17short(seconds) {
+        var timeString = seconds.toString();
+        var part2 = timeString.slice(4, 5);
+        var part3 = timeString.slice(5, 7);
+        var part4 = timeString.slice(7, 10);
+
+        var dot = ":";
+        var formattedTime = part2 + dot + part3 + dot + part4;
+
+        return formattedTime;
+    }
+
+    var now = Math.floor(new Date().getTime() / 1000);
+    var referenceOffset = 725;
+    now = now - referenceOffset;
+
+    var formattedTime = formatthe17short(now);
+
+    var element1 = document.getElementById("the17short");
+    if (element1) {
+        element1.innerHTML = formattedTime;
+    }
+}
+
+
+function unix_drawKlok() {
+    var now = new Date().getTime();
+    now = Math.floor(now/1000); 
+    var htm = now.toLocaleString(); 
+    var el = document.getElementById("unix-LY21");
+    if (el) {
+      el.innerHTML = htm;
+    }
+}
+
+function greggy_printTime() {
+    var now = new Date();
+    var dateOptions = { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric', 
+        timeZone: "America/Chicago"
+    };
+    var timeOptions = { 
+        hour: 'numeric', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: true, 
+        timeZone: "America/Chicago" 
+    };
+    
+    var dateParts = now.toLocaleDateString("en-US", dateOptions).split(" ");
+    var day = dateParts[1].replace(',', ''); // Extract day
+    var month = dateParts[0]; // Extract month
+    var yearX = "202X";
+
+    var time = now.toLocaleTimeString("en-US", timeOptions) + ' TX';
+    var el = document.getElementById("vartan1");
+    if (el) {
+        el.innerHTML = `<s>${month} ${day}</s> <b>${yearX}</b> ☠️🦋 ${time}`;
+    }
+}
+
+
+function eightbyfour() {
+    var k0de = eightbyfour_mmake();
+
+    var element = document.getElementById("eightbyfour");
+    if (element) {
+        element.innerHTML = k0de;
+    }
+}
+
+function eightbyfour_mmake() {
+    function randomHexBlock() {
+        return [...Array(8)].map(() => Math.floor(Math.random() * 16).toString(16)).join('').toUpperCase();
+    }
+
+    let part1 = `${randomHexBlock()}-${randomHexBlock()}-${randomHexBlock()}-`;
+    let lastBlock = randomHexBlock();
+
+    // Pick a random position (1 to 8) and replace it with 'X'
+    let randomPos = Math.floor(Math.random() * 8);
+    lastBlock = lastBlock.substring(0, randomPos) + 'X' + lastBlock.substring(randomPos + 1);
+
+    return part1 + lastBlock;
+}
+
+function cyfiguy01_mmake() {
+
+    const RANDOZS = "ATJQKW";
+    function getRandomChar() {
+        return RANDOZS.charAt(Math.floor(Math.random() * RANDOZS.length));
+    }
+
+    var now = Math.floor(new Date().getTime() / 1000);
+    var referenceOffset = 725;
+    now = now - referenceOffset;
+
+    var timeString = now.toString();
+
+    var quarter = timeString.slice(0, 4);
+    var dime = timeString.slice(4, 5);
+    var nik = timeString.slice(5, 7);
+    var part4 = timeString.slice(7, 10);
+
+    return (
+        "C" + 
+        quarter +
+        getRandomChar() +             
+        dime +
+        nik +            
+        getRandomChar() +        
+        part4
+        // getRandomChar() +                                
+        // getRandomChar() +
+        // getRandomChar() 
+
+    );
+
+    // return (
+    //     "C" + 
+    //     part1 +
+    //     getRandomChar() +                
+    //     part2 +
+    //     getRandomChar() +        
+    //     part3 +        
+    //     getRandomChar() +        
+    //     part4
+    //     // getRandomChar() +                                
+    //     // getRandomChar() +
+    //     // getRandomChar() 
+
+    // );
+
+}
+
+function cyfiguy01() {
+    var k0de = cyfiguy01_mmake();
+
+    var element = document.getElementById("cyfiguy01");
+    if (element) {
+        element.innerHTML = "#" + k0de + " 🐈‍⬛";
+    }
+}
+
+function cyfiguy09_mmake() {
+
+    const RANDOZS = "ATJQKW";
+    function getRandomChar() {
+        return RANDOZS.charAt(Math.floor(Math.random() * RANDOZS.length));
+    }
+
+    function getRandomTimestamp() {
+        const min = Math.floor(Date.now() / 1000);
+        const max = 1699999999;
+    
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var now = getRandomTimestamp();
+    var referenceOffset = 725;
+    now = now - referenceOffset;
+
+    var timeString = now.toString();
+
+    var quarter = timeString.slice(0, 4);
+    var dime = timeString.slice(4, 5);
+    var nik = timeString.slice(5, 7);
+    var part4 = timeString.slice(7, 10);
+
+    return (
+        "C" + 
+        quarter +
+        getRandomChar() +             
+        dime +
+        nik +            
+        getRandomChar() +        
+        part4
+        // getRandomChar() +                                
+        // getRandomChar() +
+        // getRandomChar() 
+
+    );
+}
+
+function cyfiguy09() {
+
+    var maybe = Math.floor(Math.random() * 3) + 1;
+    // if (maybe != 3) return;
+
+    var k0de = cyfiguy09_mmake();
+
+    var element = document.getElementById("cyfiguy09");
+    if (element) {
+        element.innerHTML = k0de + " 🐈‍⬛";
+    }
+}
+
+function cybr09_mmake() {
+    const RANDOZS = "ATJKQATJKQATJKQMW";
+    let deck = RANDOZS.split('').sort(() => 0.5 - Math.random());
+
+    function kaard() {
+        return deck.shift();
+    }
+
+    const referenceOffset = 725;
+    let now = Math.floor(Date.now() / 1000) - referenceOffset;
+    let ts = now.toString();
+
+    let quarter = ts.slice(0, 4);
+    let dime = ts.slice(4, 5);
+    let nickel = ts.slice(5, 7);
+    let penny = ts.slice(7, 10);
+
+    return (
+        "C" +
+        quarter +
+        kaard() +
+        dime +
+        kaard() +
+        nickel +
+        kaard() +
+        penny +
+        "MA"
+    );
+}
+
+
+function cybr09() {
+
+    var maybe = Math.floor(Math.random() * 3) + 1;
+    // if (maybe != 3) return;
+
+    var k0de = cybr09_mmake();
+    var element = document.getElementById("cybr09");
+    if (element) {
+        element.innerHTML = k0de + " 🐈‍⬛";
+    }
+}
+
+iz_drawKlok();
+greggy_printTime();
+k0untr();
+k0untr13();
+k0untr345();
+cyfiguy01();
+cyfiguy09();
+cybr09();
+draw_the17short();
+eightbyfour();
+
+setInterval(eightbyfour, 1212);
+var the17short = setInterval(draw_the17short, 250)
+var c = setInterval(cyfiguy01, 333)
+setInterval(cyfiguy09, 999 * 3)
+setInterval(cybr09, 963 * 2)
+var k = setInterval(k0untr, 250);
+setInterval(k0untr13, 250);
+var z = setInterval(k0untr345, 250);
+var u = setInterval(unix_drawKlok, 250);
+var x = setInterval(iz_drawKlok, 250);
+var y = setInterval(greggy_printTime, 250);
+</script>
+<script> 
+function showEarnings(ts, divID, ratePerHour, fast) {
+  if (ts == 0) return;
+  
+  var startTime = new Date(ts * 1000).getTime();
+  var now = new Date().getTime();
+  var elapsedMilliseconds = now - startTime;
+  var elapsedHours = elapsedMilliseconds / (1000 * 60 * 60);
+  var earnings = elapsedHours * ratePerHour;
+
+  if (fast) {
+    document.getElementById(divID).innerHTML = "$" + earnings.toFixed(9);
+  } else {
+    // up to nearest odd
+    var roundedEarnings = Math.ceil(earnings * 100) / 100; 
+    if (Math.floor(roundedEarnings * 100) % 2 === 0) {
+      roundedEarnings += 0.01; 
+    }
+    document.getElementById(divID).innerHTML = "$" + roundedEarnings.toFixed(2);
+  }
+}
+var ratePerHour = 7.25; 
+
+showEarnings(1745927476, "reseevr", ratePerHour, true);
+setInterval(showEarnings, 100, 1745927476, "reseevr", ratePerHour, true);
+</script>
+
+<script> 
+function showEarnings(ts, divID, ratePerHour, fast) {
+  if (ts == 0) return;
+  
+  var startTime = new Date(ts * 1000).getTime();
+  var now = new Date().getTime();
+  var elapsedMilliseconds = now - startTime;
+  var elapsedHours = elapsedMilliseconds / (1000 * 60 * 60);
+  
+  // Reverse the earnings, starting at $7.25 and decreasing over time
+  var earnings = ratePerHour - (elapsedHours * ratePerHour);
+
+  // Ensure earnings don't go below $0
+  if (earnings < 0) earnings = 0;
+
+  if (fast) {
+    document.getElementById(divID).innerHTML = "$" + earnings.toFixed(9);
+  } else {
+    // Round to nearest odd cent
+    var roundedEarnings = Math.ceil(earnings * 100) / 100; 
+    if (Math.floor(roundedEarnings * 100) % 2 === 0) {
+      roundedEarnings += 0.01; 
+    }
+    document.getElementById(divID).innerHTML = "$" + roundedEarnings.toFixed(2);
+  }
+}
+
+// Set the rate per hour
+var ratePerHour = 7.25; 
+
+showEarnings(1745927401, "rsvr725", ratePerHour, true);
+
+// Update every 100 ms
+setInterval(function() {
+  showEarnings(1745927401, "rsvr725", ratePerHour, true);
+}, 100);
+</script>
+
+
+<script>  
+const initialDebt = 35963976342723; 
+const initialDate = new Date('2024-11-18T21:45:00Z'); // 3:45pm CT in UTC
+// const ratePerMinute = 5250000; // $5.25 million per minute
+const ratePerMinute = 4440000; // $5.25 million per minute
+const ratePerMillisecond = ratePerMinute / 60000; // Convert to per millisecond
+
+ function updateDebt() {
+      const now = new Date();
+      const elapsedMilliseconds = now - initialDate; // Time difference in milliseconds
+      const currentDebt = initialDebt + elapsedMilliseconds * ratePerMillisecond;
+      
+      // Round to the nearest dollar and format with commas
+      document.getElementById('dedclock').textContent = `$${Math.round(currentDebt).toLocaleString('en-US')}`;
+    }
+
+setInterval(updateDebt, 50); 
+</script>
+
+<script>  
+function showDelta(ts, divID) {
+  var countDownDate = new Date(ts * 1000);
+  var now = new Date().getTime();
+  var distance = now - countDownDate;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  var forever = 12;
+  minutes = minutes + forever;
+  seconds = seconds + forever;
+
+  hours = ('00' + hours).slice(-2);
+  minutes = ('00' + minutes).slice(-2);
+  seconds = ('00' + seconds).slice(-2);
+
+  var duration = "";
+  if (days > 0) {
+    duration = days + "d:" + hours + "h:" + minutes + "m ago";
+  } else {
+    duration = hours + "h:" + minutes + "m:" + seconds + "s ago";
+  }
+
+  document.getElementById(divID).innerHTML = duration;           
+}
+
+showDelta(1745898111, "s1ncer");
+setInterval(showDelta, 250, 1745898111, "s1ncer");
+</script>
+<script>
+  let count = 0;
+  const div = document.getElementById('mosquitoes');
+
+  setInterval(() => {
+    if (count < 12) {
+      count++;
+      div.textContent = '⌚️'.repeat(count);
+    }
+  }, 1000);
+</script>
+
+<script>
+setTimeout(() => {
+    document.getElementById('cyberportal').style.display = 'block';
+}, 12000);
+</script>
+
+<script>
+var canvas404 = document.getElementById("404-clock");
+var ctx404 = canvas404.getContext("2d");
+var radius404 = canvas404.height / 2;
+ctx404.translate(radius404, radius404);
+radius404 = radius404 * 0.90;
+
+drawClock404();
+setInterval(drawClock404, 100);
+
+function drawClock404() {
+  drawFace404(ctx404, radius404);
+  drawNumbers404(ctx404, radius404);
+  drawTime404(ctx404, radius404);
+}
+
+function drawFace404(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers404(ctx, radius) {
+   drawNumbers404_1jrk4r99(ctx, radius);
+}
+
+
+function drawNumbers404(ctx, radius) {
+  // const zstory = ["🃏", "🃏", "🌹", "🌹", "🌹", "🌹", "😻", "😻", "😻", "😻", "😻", "😻"];
+//  const zstory = ["🐸", "🎈", "🏆", "🎈", "🏆", "🎈", "🏆", "🎈", "🏆", "🎈", "🏆", "🎈"];
+
+  const zstory = ["🐸", "🍿", "⛸", "📓", "💖", "🐬", "🎢", "🎈", "🐈‍⬛", "🃏", "🌹", "🔑"];
+
+  // 2. Simple zhuffle mechanism with refresh throttle
+  drawNumbers404.counter = (drawNumbers404.counter || 0) + 1;
+  const zhangeEvery = 33;
+
+  if (drawNumbers404.counter % zhangeEvery === 1 || !drawNumbers404.shuffled) {
+    drawNumbers404.shuffled = zstory.slice().sort(() => 0.5 - Math.random());
+  }
+
+  const symbols = drawNumbers404.shuffled;
+
+  // 3. Draw the symbols around the clock
+  ctx.font = radius * 0.15 + "px arial";
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+
+  for (let i = 0; i < 12; i++) {
+    const ang = (i + 1) * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius * 0.85);
+    ctx.rotate(-ang);
+
+    ctx.fillText(symbols[i], 0, 0);
+
+    ctx.rotate(ang);
+    ctx.translate(0, radius * 0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+
+function drawTime404(ctx, radius){
+    var now = new Date();
+    var hour = 4;
+    var minute = 4;    
+    var second = now.getSeconds();
+    second = 60 - second;
+
+    hour = hour%12;
+    hour = (hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (0*Math.PI/(360*60));  
+    drawHand404(ctx, hour, radius*0.5, radius*0.06);
+
+    minute = (minute*Math.PI/30);
+    drawHand404(ctx, minute, radius*0.75, radius*0.07);
+
+    second = (second*Math.PI/30);
+    drawHand404(ctx, second, radius*0.9, radius*0.02);
+
+}
+
+function drawHand404(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+<script>
+const RADIAL_LABEL_PLAY = "☀️📻☀️";
+const RADIAL_LABEL_STOP = "🤫";
+
+document.querySelectorAll(".radial-btn").forEach(btn => {
+    btn.textContent = RADIAL_LABEL_PLAY;
+});
+
+function tuneRadial(buttonEl) {
+    const radialShell = buttonEl.closest(".radial");
+    const radialPlayer = radialShell.querySelector(".radialPlayer");
+    const durationMin = parseFloat(radialShell.dataset.duration);
+    const src = radialShell.dataset.src;
+
+    if (!radialPlayer.src || !radialPlayer.src.includes(src)) {
+        radialPlayer.src = src + "?t=" + Date.now();
+    }
+
+    const shell = radialShell.querySelector(".radial-shell");
+
+    function getRadialPosition() {
+        const now = new Date();
+        const totalSec = now.getMinutes() * 60 + now.getSeconds();
+        const loopSec = durationMin * 60;
+        return totalSec % loopSec;
+    }
+
+    if (radialPlayer.paused) {
+        radialPlayer.currentTime = getRadialPosition();
+        radialPlayer.play();
+        buttonEl.textContent = RADIAL_LABEL_STOP;
+        shell.classList.add("station-active");
+    } else {
+        radialPlayer.pause();
+        radialPlayer.currentTime = 0;
+        buttonEl.textContent = RADIAL_LABEL_PLAY;
+        shell.classList.remove("station-active");
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SHA-256 Key Verifier</title>
+</head>
+<body>
+  <h2>Key to SHA-256</h2>
+  <input type="text" id="keyInput" placeholder="Enter key (e.g., 24A1CA8E-690B4783-B20AC689-84844D62)" size="60">
+  <button onclick="generateHash()">Generate SHA-256</button>
+  <p><strong>SHA-256 Hash:</strong> <span id="output"></span></p>
+
+  <script>
+    async function generateHash() {
+      const key = document.getElementById('keyInput').value;
+      const encoder = new TextEncoder();
+      const data = encoder.encode(key);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      document.getElementById('output').innerText = hashHex;
+    }
+  </script>
+</body>
+</html>

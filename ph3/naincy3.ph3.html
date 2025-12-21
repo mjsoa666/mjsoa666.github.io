@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="gL1sh">
+<head>
+<meta charset="UTF-8"/>
+<meta name="robots" content="none">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+  <title> naincy3.ph3</title>
+    <style>
+        .hidden { display: none; }
+        <style>
+  .kvnt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: monospace;
+       white-space: pre;
+  }
+
+  .kvnt-container div {
+    margin-left: 20px;
+  }
+  
+  
+
+  .fucku {
+    display: inline;
+  }
+
+  .value {
+    margin-left: 10px;
+  }
+</style>
+   
+
+    <script>
+        function cookieSnook(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookieWhole = cookieArr[i].split("=");
+                if (name === cookieWhole[0].trim()) {
+                    return decodeURIComponent(cookieWhole[1]);
+                }
+            }
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function tymesl1p() {
+            const now = Math.floor(Date.now() / 1000);
+            let then = cookieSnook("then");
+            if (!then) {
+                then = now;
+                setCookie("then", then, 1);
+            } else {
+                then = parseInt(then);
+            }
+            const soon = then + 725;
+
+            document.getElementById("now").innerText = "now : " + now;
+            document.getElementById("then").innerText = "then : " + then;
+            document.getElementById("soon").innerText = "soon : " + soon;
+
+            if (now > soon) {
+                then = now;
+                setCookie("then", then, 1);
+            }
+        }
+
+        setInterval(tymesl1p, 1000);
+        window.onload = tymesl1p;
+
+</script>
+<pre><code style="color: #000000"><span style="color: #0000BB">&lt;?php
+</span><span style="color: #FF8000">
+<div class="kvnt-container"><div class="fucku">///<span class="value" id="soon"></span></div> 
+<div class="fucku">////<span class="value" id="now"></span></div>
+<div class="fucku">///<span class="value" id="then"></span></div>
+</div>
+
+</span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">"NOW"</span><span style="color: #007700">, </span><span style="color: #0000BB">time</span><span style="color: #007700">());
+</span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">"TYMESL1P"</span><span style="color: #007700">, </span><span style="color: #0000BB">725</span><span style="color: #007700">);
+
+</span><span style="color: #0000BB">$ME03 </span><span style="color: #007700">= </span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">;
+</span><span style="color: #0000BB">$skrpt </span><span style="color: #007700">= </span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$ME03</span><span style="color: #007700">);
+</span><span style="color: #0000BB">$then_pattern </span><span style="color: #007700">= </span><span style="color: #0000BB">mmake_paatrn</span><span style="color: #007700">(</span><span style="color: #DD0000">"then"</span><span style="color: #007700">);
+</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #0000BB">$then_pattern</span><span style="color: #007700">, </span><span style="color: #0000BB">$skrpt</span><span style="color: #007700">, </span><span style="color: #0000BB">$_matzhes</span><span style="color: #007700">);
+
+</span><span style="color: #0000BB">$THEN </span><span style="color: #007700">= (int) </span><span style="color: #0000BB">$_matzhes</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];
+
+</span><span style="color: #0000BB">$SOON </span><span style="color: #007700">= </span><span style="color: #0000BB">$THEN </span><span style="color: #007700">+ </span><span style="color: #0000BB">TYMESL1P</span><span style="color: #007700">;
+
+</span><span style="color: #0000BB">$now </span><span style="color: #007700">= </span><span style="color: #0000BB">time</span><span style="color: #007700">();
+if (</span><span style="color: #0000BB">NOW </span><span style="color: #007700">&gt; </span><span style="color: #0000BB">$SOON</span><span style="color: #007700">) {
+    </span><span style="color: #0000BB">$THEN </span><span style="color: #007700">= </span><span style="color: #0000BB">$now</span><span style="color: #007700">;
+    </span><span style="color: #0000BB">$SOON </span><span style="color: #007700">= </span><span style="color: #0000BB">$THEN </span><span style="color: #007700">+ </span><span style="color: #0000BB">TYMESL1P</span><span style="color: #007700">;
+}
+
+</span><span style="color: #0000BB">$skrpt </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(
+    </span><span style="color: #0000BB">$then_pattern</span><span style="color: #007700">, </span><span style="color: #DD0000">"then : " </span><span style="color: #007700">. </span><span style="color: #0000BB">$THEN</span><span style="color: #007700">, </span><span style="color: #0000BB">$skrpt
+</span><span style="color: #007700">);    
+
+</span><span style="color: #0000BB">$skrpt </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(
+    </span><span style="color: #0000BB">mmake_paatrn</span><span style="color: #007700">(</span><span style="color: #DD0000">"now"</span><span style="color: #007700">), </span><span style="color: #DD0000">"now : " </span><span style="color: #007700">. </span><span style="color: #0000BB">NOW</span><span style="color: #007700">, </span><span style="color: #0000BB">$skrpt
+</span><span style="color: #007700">);
+
+</span><span style="color: #0000BB">$skrpt </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(
+    </span><span style="color: #0000BB">mmake_paatrn</span><span style="color: #007700">(</span><span style="color: #DD0000">"soon"</span><span style="color: #007700">), </span><span style="color: #DD0000">"soon : " </span><span style="color: #007700">. </span><span style="color: #0000BB">$SOON</span><span style="color: #007700">, </span><span style="color: #0000BB">$skrpt
+</span><span style="color: #007700">);
+
+</span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$ME03</span><span style="color: #007700">, </span><span style="color: #0000BB">$skrpt</span><span style="color: #007700">);
+
+function </span><span style="color: #0000BB">mmake_paatrn</span><span style="color: #007700">(</span><span style="color: #0000BB">$key</span><span style="color: #007700">) {
+    return </span><span style="color: #DD0000">"/</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">\s*:\s*(\d+)/"</span><span style="color: #007700">;
+}
+
+</span><span style="color: #FF8000">// naincy3 [PH3]
+// Feb 29, 1987
+// 👁⌚️👁</span></code></pre>

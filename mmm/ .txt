@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="gL1sh">
+<head>
+    <meta charset="UTF-8">
+    <title>play323</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #ff1987;
+            color: #020205;
+            font-family: Monospace;
+            font-size: 33px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow: auto;
+        }
+        .kaard {
+            display: block;
+            width: 103%;
+            max-width: 666px;
+        }
+        .kaard2 {
+            display: flex;
+            flex-direction: row; 
+            align-items: flex-start;
+            text-align: left;
+            overflow-x: auto; 
+            padding-left: 20px;
+        }
+        .time-container {
+            margin-top: 10px;
+            color: #ff1987; 
+            font-family: Arial, sans-serif; 
+            text-align: left;
+        }
+        .time-box {
+            font-size: 14px;
+            margin: 5px 0;  
+        }
+        a:hover {
+            color: #aea;
+        }
+        a {
+            background-color: #9933CC; 
+            border-radius: 0.1em;
+            color: #63dbd9;
+            text-decoration: none;
+        }
+        .raaffl-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .raaffl-container:hover .raaffl-text {
+            display: block;
+        }
+
+        .raaffl-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 240px;
+            text-align: left;
+        }        
+         .knmnz915 {
+            position: relative;
+            display: inline-block;
+        }
+        .knmnz915:hover .knmnz915-text {
+            display: block;
+        }
+
+        .knmnz915-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            font-size: 10px;
+            color: black;
+            font-style: italic;
+            background-color: #fff;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 240px;
+            text-align: left;
+        }
+
+        .k0rnr-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .k0rnr-container:hover .k0rnr-image {
+            display: block;
+        }
+
+        .k0rnr-image {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+            transform: scaleX(-1);
+        }
+        
+    </style>
+</head>
+<body>
+    <span style="font-size: 5.8px;"> <pre>
+//  ▄▀▀█▄▄   ▄▀▀▀▀▄       ▄▀▀▄ ▀▄  ▄▀▀▀▀▄   ▄▀▀▀█▀▀▄ 
+// █ ▄▀   █ █      █     █  █ █ █ █      █ █    █  ▐ 
+// ▐ █    █ █      █     ▐  █  ▀█ █      █ ▐   █     
+//   █    █ ▀▄    ▄▀       █   █  ▀▄    ▄▀    █      
+//  ▄▀▄▄▄▄▀   ▀▀▀▀       ▄▀   █     ▀▀▀▀    ▄▀       
+// █     ▐               █    ▐            █         
+// ▐                     ▐                 ▐         
+//  ▄▀▀█▄▄▄▄  ▄▀▀▄▀▀▀▄  ▄▀▀█▄   ▄▀▀▀▀▄  ▄▀▀█▄▄▄▄     
+// ▐  ▄▀   ▐ █   █   █ ▐ ▄▀ ▀▄ █ █   ▐ ▐  ▄▀   ▐     
+//   █▄▄▄▄▄  ▐  █▀▀█▀    █▄▄▄█    ▀▄     █▄▄▄▄▄      
+//   █    ▌   ▄▀    █   ▄▀   █ ▀▄   █    █    ▌      
+//  ▄▀▄▄▄▄   █     █   █   ▄▀   █▀▀▀    ▄▀▄▄▄▄       
+//  █    ▐   ▐     ▐   ▐   ▐    ▐       █    ▐       
+//  ▐                                   ▐       </pre></span>
+🍩 ❌ 🗑</span><br>
+    <kaard>
+       <a href="https://kabalah88.neocities.org/808">🐈‍⬛ [C1742Q7A81K544X0]</a><br>
+    </kaard>
+   <p><a href="113">113</a></p><br>
+    <kaard2>
+     
+            <div>
+                <span style="font-size: 14px;">
+                    <div class="raaffl-container">
+                        <a href="tix">RAAFFL 🎟</a>
+                        <div class="raaffl-text">
+                            🎟 RFF-1717:8:77:375.00000-94CE1 <br> 🎟 RFF-1741:9:34:420.00000-B75F2
+                        </div>
+                    </div>
+                    <img src="/mmm/808.png" width="200" height="200" alt="808">
+                    <div class="k0rnr-container">
+                        <a href="k0rnr">k0rnr🦄</a>
+                        <img class="k0rnr-image" src="/unused/8c35f367c8b6dfbdf948a21ca197792e.png" alt="k0rnr">
+                    </div>
+                </span>
+            </div>
+    </kaard2>
+    <span style="font-size: 3px;"><a href="https://mmm.1987.wtf/bored">https://pynk5.neocities.org/mmm/808</a></span>
+       <p> </p>
+        <span style="font-size: 10px;"><span style="background-color: none;"><span style="color: black;"><span style="font-style: italic;"><div class="knmnz915"><p>#knmnz915</p><div class="knmnz915-text">cant sms : i don't own a phone ;)</div></div></span></span></span></span>
+</body>
+</html>

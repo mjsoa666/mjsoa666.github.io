@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="gl1sh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⛓ Endless Knot</title>
+    <style>
+     .navbar div {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  z-index: 333;  
+  position: fixed;
+  float: left;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 535px;   
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #9933CC; 
+  color: white; 
+}
+
+.navbar-bottom {
+  z-index: 333; 
+  left: 0; 
+  max-width: 535px;   
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  text-align: right;   
+  width: 100%;
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #9933CC; 
+  color: white;
+}.navbar div {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  z-index: 333;  
+  position: fixed;
+  float: left;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 535px;   
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #9933CC; 
+  color: white; 
+}
+
+.navbar-bottom {
+  z-index: 333; 
+  left: 0; 
+  max-width: 535px;   
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  text-align: right;   
+  width: 100%;
+  font-size: 1.2em;
+  padding: 4px; 
+  background-color: #9933CC; 
+  color: white;
+}
+
+body {
+    font-family: 'Inconsolata.zs', monospace;
+    margin: 20px;   
+    margin-top: 51px;
+    margin-bottom: 51px;
+    margin-left: 9px;
+    margin-right: 9px;
+    max-width: 555px;
+    font-size: 17px;
+    line-height: 1.6;
+    background-color: black;
+    color: white;
+    opacity: 1;
+     
+     }
+      canceled {
+        text-decoration: line-through;
+      }
+      kamea {
+     font-family: Arial,  monospace;
+        text-decoration: overline;
+}
+kameagainea {
+      text-decoration: underline;
+      position: relative;
+}
+              a {
+            color: #63dbd9;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            display: block; 
+        }     a:hover {
+            color: #aea;
+            {
+    </style>
+
+
+<script>
+function getLoopDayName(index, reverse) {
+    const map = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC', 'YEZ'];
+    return reverse ? map[13 - index] : map[index - 1];
+}
+
+function getLoopDayIndex(position) {
+    return position;
+}
+
+function getLoopYear(toneData) {
+    let { wave, tone } = toneData;
+    if (wave < 0) return 0;
+    if (wave < 23) return wave;
+    if (wave === 23) return tone === 1 ? 23 : tone === 2 ? 24 : tone >= 3 && tone <= 6 ? 25 : wave + (tone - 4);
+    if (wave === 24) return wave + 9;
+    return [0, 42, 53, 86, 99, 88, 87, 78, 77, 66, 44][wave - 25] || 0;
+}
+
+function getWhen(loopDate, currentDate) {
+    const isToday = loopDate.toDateString() === currentDate.toDateString();
+    const isPast = !isToday && loopDate < currentDate;
+    return isPast ? '404' : isToday ? '1212' : '333';
+}
+
+function getToneData(gregorianDate) {
+    const baseDate = new Date('2023-12-12');
+    const inputDate = new Date(gregorianDate);
+    if (inputDate.toDateString() === new Date('2024-02-29').toDateString() || 
+        inputDate.toDateString() === new Date('2024-10-08').toDateString()) return null;
+    
+    let daysDifference = Math.floor((inputDate - baseDate) / (1000 * 60 * 60 * 24));
+    if (inputDate > new Date('2024-02-29')) daysDifference -= 1;
+    
+    let toneNumber = ((daysDifference + 1) % 13) || 13;
+    let wave = Math.floor(daysDifference / 13);
+    return { tone: toneNumber, wave };
+}
+
+function generateKalada(startDate) {
+    let kalada = [];
+    let currentDate = new Date();
+    let startHere = new Date(startDate);
+    let kount = 0;
+
+    for (let d = new Date(startHere); d <= currentDate; d.setDate(d.getDate() + 1)) {
+        let loopDate = new Date(d);
+        let toneData = getToneData(loopDate);
+        
+        if (!toneData) {
+            kalada.push({ kount: ++kount, date: loopDate.toISOString().split('T')[0], when: getWhen(loopDate, currentDate), tone: null, LY: null, dayname: null, zsynk: null });
+            continue;
+        }
+        
+        let tone = toneData.tone;
+        let position = getLoopDayIndex(tone);
+        let LY = getLoopYear(toneData);
+        let reverse = (LY === 14);
+        let dayName = getLoopDayName(position, reverse);
+        let zsynk = (getWhen(loopDate, currentDate) === '404') ? '🏆' : (getWhen(loopDate, currentDate) === '1212') ? '🐸' : '🦄';
+        kalada.push({ kount: ++kount, date: loopDate.toISOString().split('T')[0], when: getWhen(loopDate, currentDate), tone, LY, dayname: dayName, wave: toneData.wave, zsynk });
+    }
+
+    for (let i = 1; i <= 13; i++) {
+        let loopDate = new Date(currentDate);
+        loopDate.setDate(loopDate.getDate() + i);
+
+        let toneData = getToneData(loopDate);
+        
+        if (!toneData) {
+            kalada.push({ kount: ++kount, date: loopDate.toISOString().split('T')[0], when: getWhen(loopDate, currentDate), tone: null, LY: null, dayname: null, zsynk: null });
+            continue;
+        }
+        
+        let tone = toneData.tone;
+        let position = getLoopDayIndex(tone);
+        let LY = getLoopYear(toneData);
+        let reverse = (LY === 14);
+        let dayName = getLoopDayName(position, reverse);
+        let zsynk = (getWhen(loopDate, currentDate) === '404') ? '🏆' : (getWhen(loopDate, currentDate) === '1212') ? '🐸' : '🦄';
+        kalada.push({ kount: ++kount, date: loopDate.toISOString().split('T')[0], when: getWhen(loopDate, currentDate), tone, LY, dayname: dayName, wave: toneData.wave, zsynk });
+    }
+
+    return kalada;
+}
+
+function formatDate(date) {
+    return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear().toString().slice(0, -1)}X`;
+}
+
+function printKalada(kalada) {
+    let html = "<table border='1' style='font-size:1.3em'>";
+    kalada.reverse().forEach(day => {
+        let style = day.LY % 2 === 0 ? "background-color:#ff1969;color:white;" : "background-color:black;color:#ff1969;";
+        if (day.LY === null) style = 'background-color:red;color:white;';
+        if (day.when === '404') style += 'text-decoration: line-through;';
+        if (day.when === '1212') style = 'background-color:yellow;color:black;';
+        if (day.when === '333') style = 'background-color:#4ed4d4;color:white;';
+        html += `<tr style="${style}"><td>${day.kount}</td><td>${formatDate(new Date(day.date))}</td><td>${day.when}</td><td>${day.dayname || ''}</td><td>${day.zsynk}</td></tr>`;
+    });
+    html += "</table>";
+    document.getElementById("kaladaTable").innerHTML = html;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    let startDate = "2023-12-12";
+    let kalada = generateKalada(startDate);
+    printKalada(kalada);
+});
+</script>
+  </head>
+  <body>
+<canceled><h2>loopy 🎢🎡</h2> </canceled><br>
+
+ <h1>⛓ <i>Endlesz (k)Not </i>⛓ </h1><br>
+
+<div id="kaladaTable"></div>
+<br>
+    202X ☠️ 808 <br>
+
+  <p>Based on <a href="loopy.ph3.html">loopy.ph3</a></p>
+  </body>
+</html>

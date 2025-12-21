@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="gl1sh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Time Display</title>
+    <script>
+        function cookieSnook(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookieWhole = cookieArr[i].split("=");
+                if (name === cookieWhole[0].trim()) {
+                    return decodeURIComponent(cookieWhole[1]);
+                }
+            }
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function tymesl1p() {
+            const now = Math.floor(Date.now() / 1000);
+            let then = cookieSnook("then");
+            if (!then) {
+                then = now;
+                setCookie("then", then, 1);
+            } else {
+                then = parseInt(then);
+            }
+            const soon = then + 725;
+
+            document.getElementById("now").innerText = "now : " + now;
+            document.getElementById("then").innerText = "then : " + then;
+            document.getElementById("soon").innerText = "soon : " + soon;
+
+            if (now > soon) {
+                then = now;
+                setCookie("then", then, 1);
+            }
+        }
+
+        setInterval(tymesl1p, 1000);
+        window.onload = tymesl1p;
+    </script>
+</head>
+<body>
+    <h1>naincy3 [PH3]</h1>
+    <div id="soon"></div>
+    <div id="now"></div>
+    <div id="then"></div>
+</body>
+</html>
